@@ -1,7 +1,7 @@
 public class PetMachine {
     private boolean isClean = true;
     private boolean hasPet = false;
-    private int water = 100;
+    private int water = 0;
     private int shampoo = 0;
 
     // constructor
@@ -13,22 +13,33 @@ public class PetMachine {
     }
 
     // banho do pet
-    public void petBath(){
+    public boolean petBath(){
         if (waterLevel() <= 0) {
             System.out.println("O nível de água está zerado!");
+            return false;
         }
+        return true;
     }
 
     // abastecer a agua
+    public void putWater(){
+        this.water += 2;
+    }
 
     // abastecer o shampoo
+    public void putShampoo(){
+        this.shampoo += 2;
+    }
 
     // verificar nivel de agua
     public int waterLevel(){
         return getWater();
     }
-    // verificar nivel de shampoo
 
+    // verificar nivel de shampoo
+    public int shampooLevel(){
+        return getShampoo();
+    }
     // verificar se tem pet no banho
 
     // colocar pet na maquina
