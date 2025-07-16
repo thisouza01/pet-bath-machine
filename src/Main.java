@@ -44,7 +44,6 @@ public class Main {
         String name = scanner.next();
         var pet = new Pet(name);
         petMachine.putPetInTheMachine(pet);
-        System.out.println("o pet foi colocado na máquina!");
     }
 
     public static void checkIfHasPetInMachine(){
