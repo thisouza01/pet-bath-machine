@@ -16,4 +16,8 @@ public class Pet {
     public boolean isClean() {
         return clean;
     }
+
+    public void setClean(final boolean clean) {
+        this.clean = clean;
+    }
 }
