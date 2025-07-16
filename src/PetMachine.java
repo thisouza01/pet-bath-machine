@@ -26,6 +26,7 @@ public class PetMachine {
         water += 2;
     }
 
+    // abastecer o shampoo
     public void addShampoo(){
         if (shampoo == 10){
             System.out.println("A capacidade do shampoo está no limite!");
@@ -50,7 +51,7 @@ public class PetMachine {
     }
 
     // colocar pet na maquina
-    public void putPetInTheMachine(){
+    public void putPetInTheMachine(Pet pet){
         if (!this.clean) {
             System.out.println("A máquina está suja. Para colocar um pet, terá que limpa-la!");
             return;
@@ -61,7 +62,7 @@ public class PetMachine {
             return;
         }
 
-
+        this.pet = pet;
     }
 
     // retirar pet da maquina
@@ -70,7 +71,19 @@ public class PetMachine {
             System.out.println("Para retirar, precisa ter um pet dentro!");
             return;
         }
-    }
-    // limpar maquina
 
+        this.clean = this.pet.isClean();
+
+        System.out.println("o Pet " + pet.getName() + " está limpo!");
+        this.pet = null;
+    }
+
+    // limpar maquina
+    public void washMachine(){
+        this.water -= 10;
+        this.shampoo -= 2;
+        this.clean = true;
+
+        System.out.println("A máquina está limpa!");
+    }
 }
