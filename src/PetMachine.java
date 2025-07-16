@@ -4,21 +4,19 @@ public class PetMachine {
     private int water = 0;
     private int shampoo = 0;
 
-    // constructor
-    public PetMachine() {
-        this.isClean = isClean;
-        this.hasPet = hasPet;
-        this.water = water;
-        this.shampoo = shampoo;
-    }
+    private Pet pet;
 
     // banho do pet
-    public boolean petBath(){
+    public void takeShower(){
         if (waterLevel() <= 0) {
             System.out.println("O nível de água está zerado!");
-            return false;
         }
-        return true;
+
+        pet.setClean(true);
+    }
+
+    public boolean setClean(boolean isClean){
+        return isClean;
     }
 
     // abastecer a agua
@@ -43,16 +41,26 @@ public class PetMachine {
     // verificar se tem pet no banho
 
     // colocar pet na maquina
+    public void putPetInTheMachine(){
+        if (this.pet != null){
+            System.out.println("Já tem um pet na máquina!");
+        }
+    }
 
     // retirar pet da maquina
-
+    public void removePetFromMachine(){
+        if (this.pet == null){
+            System.out.println("Para retirar, precisa ter um pet dentro!");
+            return;
+        }
+    }
     // limpar maquina
 
 
     // getters
 
     public int getWater() {
-        return water;
+        return this.water;
     }
     public int getShampoo() {
         return shampoo;
